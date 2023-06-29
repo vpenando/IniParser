@@ -1,4 +1,3 @@
-﻿
 let allLines = 
     [ "[Section1] ; this is a comment"
     ; "name1 = value1"
@@ -10,12 +9,13 @@ let allLines =
     ]
 
 
-
 let printContent = function
-    | Ok content -> printfn "%s" (content.ToString())
+    | Ok content ->
+        printfn "%s" (content.ToString())
         
     | Error e ->
         printfn "Error: %A" e
+
 
 allLines
     |> Ini.File.parseLines
